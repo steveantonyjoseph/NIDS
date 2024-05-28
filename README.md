@@ -41,8 +41,8 @@ sudo nano /lib/systemd/system/suricata.service #Create the service file and copy
 Description=Suricata Intrusion Detection Service
 After=syslog.target network-online.target
 [Service]
-# Environment file to pick up $OPTIONS. On Fedora/EL this would be
-# /etc/sysconfig/suricata, or on Debian/Ubuntu, /etc/default/suricata.
+#Environment file to pick up $OPTIONS. On Fedora/EL this would be
+#/etc/sysconfig/suricata, or on Debian/Ubuntu, /etc/default/suricata.
 #EnvironmentFile=-/etc/sysconfig/suricata
 #EnvironmentFile=-/etc/default/suricata
 ExecStartPre=/bin/rm -f /var/run/suricata.pid
@@ -64,7 +64,7 @@ Sample Configuration is there in the repository
 We need to change the output format of the logs to json
 sudo nano /usr/local/zeek/share/zeek/site/local.zeek
 Enter these lines:
-# Output to JSON
+#Output to JSON
 @load policy/tuning/json-logs.zeek
 
 6.Installing Filebeat
@@ -136,6 +136,6 @@ sudo systemctl status elasticsearch #Ensure its active
 sudo systemctl status kibana #Ensure its active
 sudo systemctl status filebeat #Ensure its active
 
-If you have configured NGINX PROXY MANAGER to reverse proxy to a domain you can navigate to it or else kibana will be running at your server ip:5601. However for Authelia 
+If you have configured NGINX PROXY MANAGER to reverse proxy to a domain you can navigate to it or else Kibana will be running at your server ip:5601. However for Authelia 
 you would require a domain,login using your credentials and you can access Kibana you can create dashboards,go to discover to query logs , etc.
 
