@@ -1,0 +1,9 @@
+users:
+    steve:
+        password: $argon2id$v=19$m=1048576,t=1,p=8$x337GXdla6OcM44RKltmeg$uUIv4sEpD4IZtiVsFaRONw87Gz+hkndTUeH9n3JPjkI
+        displayname: Steve
+        email: steveantonyjoseph@gmail.com
+        groups:
+            - admins
+            - dev
+        disabled: false
