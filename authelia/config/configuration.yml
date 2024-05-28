@@ -26,7 +26,7 @@ log:
   level: debug
 
 totp:
-  issuer: nids-steve.com #your authelia top-level domain
+  issuer: yourdomain.com #your authelia top-level domain
   period: 30
   skew: 1
 
@@ -48,9 +48,9 @@ access_control:
   rules:
     ## bypass rule
     - domain:
-        - "auth.nids-steve.com" #This should be your authentication URL
+        - "auth.yourdomain.com" #This should be your authentication URL
       policy: bypass
-    - domain: "nids-steve.com" #example domain to protect
+    - domain: "yourdomain.com" #example domain to protect
       policy: one_factor
     - domain: "sub1.yourdomain.com" #example subdomain to protect
       policy: one_factor
@@ -81,14 +81,14 @@ storage:
 notifier:
   disable_startup_check: true #true/false
   smtp:
-    username: seacetiotcsbt@gmail.com #your email address
-    password: pkph txwh rqob jitd  #your email password
+    username: example@gmail.com #your email address
+    password: App Generated Password  #your email password
     host: smtp.gmail.com #email smtp server
     port: 587 #email smtp port
-    sender: seacetiotcsbt@gmail.com
+    sender: example@gmail.com
     identifier: localhost
     subject: "[Authelia] {title}" #email subject
-    startup_check_address: seacetiotcsbt@gmail.com
+    startup_check_address: example@gmail.com
     disable_require_tls: false
     disable_html_emails: false
     tls:
